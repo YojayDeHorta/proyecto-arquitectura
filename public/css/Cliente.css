@@ -1,0 +1,252 @@
+
+.Pagina_Principal{
+    height: 80%;
+}
+
+
+a {
+    text-decoration: none;
+    color: black !important;
+}
+
+
+.nav {
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    font-size: 25px;
+    width: 100%;
+
+
+}
+
+.nav li{
+    margin-left: 35px;
+}
+
+.nav li button{
+    color: black;
+}
+
+.nav li button i{
+    margin-left: 10px;
+}
+
+.Bienvenido{
+    margin-bottom: 80px;
+}
+
+/*----------OPCIONES DE USUARIO-------------------*/
+
+.tab-content{
+    margin-top: 50px;
+}
+
+#pills-1{
+    height: 1050px;
+}
+
+#pills-1 .input{
+    text-align: center;
+    border: 1px solid black;
+    width: 43%;
+    float: left;
+    margin-left: 70px;
+    margin-top: 10px;
+    
+}
+
+#pills-1 .input label{
+    font-size: 2vw;
+    margin-bottom: 50px;
+    /*border-bottom: 3px solid red;*/
+    background-color:transparent ;
+    padding: 2px;
+    color: black;
+    margin-top: 20px;
+}
+
+#pills-1 .input select{
+    position: relative;
+    margin-bottom: 50px;
+    width: 73%;
+    left: 15%;
+}
+
+#pills-1 .input .btn-Usuario{
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+    left: -33%;
+}
+
+#pills-1 .input .btn-Usuario button{
+    margin-left: 30px;
+}
+
+
+#pills-1 .input #Info{
+    position: relative;
+    border: 1px solid blue;
+    width: 50%;
+    left: 1%;
+    top: -20px;
+}
+
+#pills-1 .container-fluid-1{
+    border: 0px solid black;
+}
+
+#pills-1 .container-fluid-1 label{
+    position: relative;
+    top: -10px;
+}
+
+
+#pills-1  .Extra{
+    position: relative;
+    top: -25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 0px solid darkred;
+}
+
+#pills-1 .Extra div{
+    width: 30%;
+    border: 2px solid silver;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#pills-1 .Extra div:hover{
+   border: 1px solid black;
+}
+
+
+#pills-1 .Extra div .form-check-input{
+    margin-top: 50px;
+}
+
+#pills-1 .Extra div h5{
+    font-size: 1.3vw;
+    margin-top: 10px;
+}
+
+#pills-1 .Extra div i{
+    font-size: 3vw;
+}
+
+#pills-1 .Extra div p{
+    font-size: 1vw;
+    margin-top: 10px;
+}
+
+
+
+#pills-1 button{
+    position: relative;
+    width: 40%;
+    left: 30%;
+    margin-bottom:20px ;
+    margin-top: 15px;
+}
+
+
+#pills-2{
+    text-align: center;
+}
+
+#pills-2 button{
+    margin-top: 30px;
+    margin-bottom:20px ;
+}
+
+#pills-3{
+text-align: center;
+}
+
+#pills-3 table{
+    position: relative;
+    text-align: center;
+}
+
+#pills-3 h1{
+    position: relative;
+    border-bottom:5px solid darkred ;
+    width: 25%;
+    left: 40%;
+    margin-bottom: 50px;
+}
+
+
+#pills-3 .Extra{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#pills-3 .Extra div{
+    border: 1px solid red;
+    width: 30%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 0px 1px black;
+}
+
+#pills-3 .Extra div h5{
+    font-size: 1.5vw;
+}
+
+#pills-3 .Extra div i{
+    font-size: 2.5vw;
+    margin-top: 10px;
+}
+
+#pills-3 .Extra div p{
+    font-size: 1vw;
+    margin-top: 20px;
+}
+
+#pills-3 .Extra div button{
+    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    
+}
+
+#Video_Icono{
+    position: relative;
+    text-align: center;
+    top: 10px;
+    
+}
+
+#Video_Icono i{
+    position: relative;
+    font-size: 3vw;
+    padding: 5px;
+}
+
+#myVideo{
+    position: relative;
+    top: 20px;
+    left: 6%;
+}
+
+.btn-close{
+    position: relative;
+    top: -135px;
+}
+
+#btn_1{
+    position: relative;
+    top: 1px;
+}
+
+
+.text-center a{
+    margin-left: 15px;
+    width: 25%;
+}
