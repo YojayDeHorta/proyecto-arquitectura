@@ -43,14 +43,14 @@ a {
 }
 
 #pills-1{
-    height: 1050px;
+    height: 100%;
 }
 
 #pills-1 .input{
     text-align: center;
     border: 1px solid black;
-    width: 43%;
-    float: left;
+    
+    
     margin-left: 70px;
     margin-top: 10px;
     
@@ -109,11 +109,12 @@ a {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     border: 0px solid darkred;
 }
 
 #pills-1 .Extra div{
-    width: 30%;
+    width: 20%;
     border: 2px solid silver;
     margin-left: 10px;
     margin-top: 10px;

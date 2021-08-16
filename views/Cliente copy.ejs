@@ -29,9 +29,23 @@
 
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab">
-                    
+                    <div class="input">
+                        <label for="">¿Qué tipo de mantenimiento deseas hacer?</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected></option>
+                            <option value="1">Mantenimiento preventivo de automoviles</option>
+                            <option value="2">Mantenimiento correctivo de vehículos</option>
+                            <option value="3">Mecánica especializada para vehículos</option>
+                            <option value="4">Embellecimiento automotriz</option>
+                        </select>
+                        <div class="btn-Usuario">
+                            <button type="button" class="btn btn-danger">Cancelar Mantenimiento</button>
+                            <button type="button" class="btn btn-success">Seleccionar Mantenimiento</button>
+                        </div>
+                        <button type="button" class="btn btn-light" id="Info"><a href="/servicios" target="_blank">¿En que consiste estos Mantenimiento?</a></button>
+                    </div>
                     <div class="input container-fluid-1">
-                        <label for="">elija los mantenimientos que les  hara a su vehiculo</label>
+                        <label for="">¿Deseas hacer un mantenimiento extra?</label>
                         <div class="Extra">
                             <div>
                                 <br>
@@ -132,17 +146,9 @@
                                     Sacabollos <br>
                                 </p>
                             </div>
-                            
+                            <button type="button" class="btn btn-success">Seleccionar Mantenimiento</button>
                         </div>
-                        
                     </div>
-                    <div class="form-group">
-                        <label for="descripcion_reparacion" id="elegir_reparacion" class="col-form-label">elija el vehiculo a reparar:</label>
-                        <select class="form-select" aria-label="Default select example" id="descripcion_reparacion" name="descripcion_reparacion" >
-                                <option value="">nissan centra</option>
-                        </select>
-                    </div>
-                    <button type="button" class="btn btn-success">Enviar solicitud</button>
                     <!---->
                 </div>
                 <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
@@ -221,7 +227,6 @@
                             </p>
                         </div>
                     </div>
-                    
                     <button type="button" class="btn btn-success">Seleccionar Mantenimiento</button> <br> <br>
                 </div>
             </div>
