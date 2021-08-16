@@ -172,9 +172,9 @@
                                 <th scope="row"><%= reparacion.id_reparacion %></th>
                                 <th scope="col"><%= vehiculos[reparacion.id_vehiculo] %></th>
                                 <td><%= reparacion.descripcion_reparacion %></td>
-                                <td>descripcion</td>
+                                <td><%= arrdescripcion[reparacion.descripcion_reparacion] %> </td>
                                 <td><%= reparacion.estado_reparacion %></td>
-                                <td>50$</td>
+                                <td><%= arrprecio[reparacion.descripcion_reparacion] %>$ </td>
                                 <td><i class="far fa-calendar-alt"></i></td>
                                 <td class="text-center"><a class="btnEditar btn btn-primary" id="editar_usuario">SI</a><a class="btnBorrar btn btn-danger" id="borrar_usuario">NO</a></td>
                             </tr>

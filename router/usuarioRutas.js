@@ -46,8 +46,8 @@ router.get('/cliente', (req, res) => {
         connection.query('SELECT * FROM reparaciones_pendientes WHERE id_cliente= ?;SELECT * FROM vehiculos;SELECT * FROM lista_reparaciones',[req.session.id_cliente],(error,results)=>{
         if(error)throw error;
         var arrvehiculos = {};results[1].map((obj)=>{arrvehiculos[obj.id_vehiculo] = obj.placa+" "+obj.marca+" "+obj.modelo;});   
-        // var arrlista = {};results[1].map((obj)=>{arrlista[obj.titulo_lista] = obj.descripcion;});   
-
+        var arrdescripcion = {};results[2].map((obj)=>{arrdescripcion[obj.titulo_lista] = obj.descripcion_lista;});   
+        var arrprecio = {};results[2].map((obj)=>{arrprecio[obj.titulo_lista] = obj.precio;});   
         res.render('cliente', {
             titulo: 'mi perfil',
             rol:req.session.rol,
@@ -55,6 +55,8 @@ router.get('/cliente', (req, res) => {
             nombre:req.session.nombre,
             reparaciones:results[0],
             vehiculos:arrvehiculos,
+            arrdescripcion:arrdescripcion,
+            arrprecio:arrprecio,
         })
     })
     }else{

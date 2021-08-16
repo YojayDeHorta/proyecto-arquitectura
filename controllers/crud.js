@@ -49,6 +49,8 @@ exports.saveVehiculos=(req,res)=>{
 exports.saveRecepcion=(req,res)=>{
     const datos=req.body;
     datos.piezas_necesarias='no registradas';
+    
+    delete datos.archivo;
     conexion.query('INSERT INTO hojas_recepcion SET ?',datos,(error,results)=>{
         if(error){
             if(error.errno==1062){

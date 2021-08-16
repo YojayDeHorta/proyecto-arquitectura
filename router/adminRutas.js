@@ -3,6 +3,37 @@ const router = express.Router();
 const connection=require('../database/db')
 const bcryptjs=require('bcryptjs');
 const crud=require('../controllers/crud');
+const multer=require('multer');
+var path = require('path')
+//archivos
+const storage=multer.diskStorage({
+    destination: (req,file,cb)=>{
+        cb(null,'./archivos')
+    },
+    filename: (req,file,cb)=>{
+        console.log(path.extname(file.originalname));
+        cb(null,'3'+path.extname(file.originalname))
+    }
+    
+})
+const upload=multer({
+    storage,
+    fileFilter: function (req, file, cb) {
+        console.log(path.extname(file.originalname));
+        var ext = path.extname(file.originalname);
+        if(  ext !== '.mp4') {
+            return   cb(new Error('el archivo no es mp4'))
+        }
+        cb(null, true)
+    }
+}).single('archivo')
+
+
+
+
+
+
+
 router.get('/adminLogin', (req, res) => {
     
     res.render('admin/Admin_Login', {
@@ -44,6 +75,18 @@ router.get('/admin', (req, res) => {
 })
 
 
+router.post('/video',(req,res)=>{
+    upload(req, res, function (err) {
+        
+        if (err) {
+            console.log(err);
+            res.json('0');
+        } else{
+            console.log("todo bien");
+        }
+
+    })
+})
 // crud mecanicos
 //READ
 router.get('/mecanicos', (req, res) => {
