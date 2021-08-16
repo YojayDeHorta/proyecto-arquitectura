@@ -130,16 +130,17 @@ a {
 }
 
 #pills-1 .Extra div h5{
-    font-size: 1.3vw;
+    font-size: 0.9vw;
     margin-top: 10px;
 }
 
 #pills-1 .Extra div i{
     font-size: 3vw;
+    margin-bottom: 10px;
 }
 
 #pills-1 .Extra div p{
-    font-size: 1vw;
+    font-size: 0.7vw;
     margin-top: 10px;
 }
 
