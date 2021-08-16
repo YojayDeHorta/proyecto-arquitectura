@@ -252,3 +252,175 @@ text-align: center;
     margin-left: 15px;
     width: 25%;
 }
+
+
+/*-----------FACTURA-------------*/
+.T-Factura {
+    position: relative;
+    width: 35%;
+    border: 3px solid rgb(248, 249, 250);
+    background-color: rgb(248, 249, 250);
+    border-radius: 10px;
+    left: 29%;
+    height: 100%;
+}
+
+
+.Primera {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.Primera div {
+    margin-top: 15px;
+}
+
+.Primera .div_1 {
+    position: relative;
+    left: 1%;
+
+}
+
+.Primera .div_1 img {
+    width: 120%;
+    height: 120px;
+}
+
+.Primera .div_2 {
+    position: relative;
+    margin-left: 140px;
+    /*color: ;*/
+    width: 49%;
+    left: 10%;
+}
+
+.Primera .div_2 table {
+    position: relative;
+    width: 140%;
+    top: -17px;
+    left: -35%;
+    margin-top: 5px;
+
+}
+
+.Primera .div_2 table td{   
+    font-size: 15px;
+}
+
+.Segundo {
+    display: flex;
+    border-bottom: 3px solid darkgoldenrod;
+    padding: 10px;
+    font-size: 22px;
+}
+
+.Segundo .div_1 {
+    /*color: gray;*/
+    font-weight: bold;
+}
+
+.Segundo .div_2 {
+    font-weight: bold;
+    color: black;
+}
+
+.Segundo div {
+    width: 50%;
+
+}
+
+.Segundo .div_2,
+.Tercera .div_2 {
+    text-align: right;
+}
+
+.Tercera {
+    display: flex;
+   
+}
+
+.Tercera div {
+    width: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.Tercera .div_2 {
+    /*border: 5px solid red;*/
+    position: relative;
+    text-align: left;
+    color: black;
+    width: 52%;
+    left: 1.5%;
+
+}
+
+.Tercera .div_2 table{
+    position: relative;
+    /*border: 1px solid red;*/
+    width: 100%;
+
+} 
+
+.Tercera .div_2 table td{
+    /*border: 5px solid black;*/
+}
+
+.Tercera .Total{
+    background-color: dimgrey;
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+}
+
+
+.Cuarto {
+    display: flex;
+}
+
+.Cuarto div {
+    border: 1px solid dimgray;
+    text-align: center;
+    width: 33%;
+    margin-left: 10px;
+}
+
+.Descripcion {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.Descripcion div{
+    position: relative;
+    text-align: center;
+    border: 1px solid black;
+    margin-top: 10px;
+    width: 32.1%;
+    margin-left: 5px;
+    margin-bottom: 5px; 
+}
+
+.Sub_Total{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    text-align: center;
+    left: 60%;
+    margin-top:10px ;
+    width: 40%;
+}
+
+
+.Sub_Total  td{
+    border: 1px solid dimgrey;
+    width: 5%;
+}
+
+.Sub_Total .title-factura{
+    background-color: dimgrey;
+    color: white;
+}
+
+/*-----------FACTURA-------------*/
