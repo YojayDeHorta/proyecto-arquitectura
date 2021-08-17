@@ -31,7 +31,7 @@
                     <td><%= vehiculo.modelo %></td>
                     <td><%= vehiculo.color %></td>
                     <td class="Btn_Personal">
-                        <button id="editar_vehiculo" class="btn btn-outline-info"><i class="fas fa-edit"></i>editar</button>
+
                         
                         <a  onclick="confirmar('<%= vehiculo.id_vehiculo %>','<%= clientesnombre[vehiculo.id_cliente] %>')" class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></i>borrar</a>
                     </td>
@@ -70,19 +70,19 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="placa" class="col-form-label">placa:</label>
+                    <label for="placa" class="col-form-label">placa</label>
                     <input type="text" class="form-control" id="placa" name="placa" required>
                 </div>
                 <div class="form-group">
-                    <label for="marca" class="col-form-label">marca:</label>
+                    <label for="marca" class="col-form-label">marca</label>
                     <input type="text" class="form-control" id="marca" name="marca" required>
                 </div>
                 <div class="form-group">
-                    <label for="modelo" class="col-form-label">modelo:</label>
+                    <label for="modelo" class="col-form-label">modelo</label>
                     <input type="text" class="form-control" id="modelo" name="modelo" required>
                 </div>
                 <div class="form-group">
-                    <label for="color" class="col-form-label">color:</label>
+                    <label for="color" class="col-form-label">color</label>
                     <input type="text" class="form-control" id="color" name="color" required>
                 </div>
 
