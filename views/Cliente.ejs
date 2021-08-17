@@ -14,9 +14,12 @@
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="pills-1-tab" data-bs-toggle="pill" data-bs-target="#pills-1" type="button" role="tab" aria-controls="pills-home" aria-selected="true">REPARACIONES DISPONIBLE<i class="far fa-check-circle"></i></button>
                 </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-2-tab" data-bs-toggle="pill" data-bs-target="#pills-2" type="button" role="tab" aria-controls="pills-home" aria-selected="false">MI FACTURA<i class="fas fa-print"></i></button>
+                <% if (validadorfactura) { %>
+                 <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-2-tab" data-bs-toggle="pill" data-bs-target="#pills-2" type="button" role="tab" aria-controls="pills-home" aria-selected="false">MI FACTURA #1<i class="fas fa-print"></i></button>
                 </li>
+                <% } %>
+                
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="pills-3-tab" data-bs-toggle="pill" data-bs-target="#pills-3" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">MI DIAGNÓSTICO AUTOMOTRIZ<i class="far fa-newspaper"></i></button>
                 </li>
@@ -155,6 +158,11 @@
                 <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
 
                     <div class="T-Factura">
+        <% if (validadorfactura) { %>                
+        <div class="facturas">
+        
+             
+            
         <section class="Primera">
             <div class="div_1">
                 <img src="img/Logo.png" alt="">
@@ -197,7 +205,7 @@
                 <table>
                     <tr>
                         <td>N° Factura</td>
-                        <td><%= factura.id_factura %> </td>
+                        <td>#<%= factura.id_factura %> </td>
                     </tr>
                     <tr>
                         <td>Fecha de factura</td>
@@ -207,21 +215,25 @@
                 <table class="Total">
                     <tr>
                         <td>TOTAL</td>
-                        <td><%= factura.costo_total %></td>
+                        <td><%= factura.costo_total %>$ dolares</td>
                     </tr>
                 </table>
             </div>
         </section> <br> <br>
         <section class="Cuarto">
-            <div class="div_1">NOMBRE</div>
-            <div class="div_2">PRECIO</div>
+            <div class="div_1">TIPO DE REPARACION</div>
+            <div class="div_2">PRECIO x REPARACION</div>
         </section><br>
+        <% reparaciones_pendientes.forEach(reparacion => { %>
+         
         <section class="Descripcion">
-            <div class="descripcion_Nombre">---</div>
-            <div class="descripcion_Precio">---</div>
+            <div class="descripcion_Nombre"><%= reparacion.descripcion_reparacion %> </div>
+            <div class="descripcion_Precio"><%= arrprecio[reparacion.descripcion_reparacion] %>$ </div>
         </section> <br> 
 
-
+        <% }) %>
+        </div>
+        <% } %>
     </div>
 
 

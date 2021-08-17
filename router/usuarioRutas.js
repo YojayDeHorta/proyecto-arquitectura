@@ -48,10 +48,12 @@ router.get('/cliente', (req, res) => {
         var arrvehiculos = {};results[1].map((obj)=>{arrvehiculos[obj.id_vehiculo] = obj.placa+" "+obj.marca+" "+obj.modelo;});   
         var arrdescripcion = {};results[2].map((obj)=>{arrdescripcion[obj.titulo_lista] = obj.descripcion_lista;});   
         var arrprecio = {};results[2].map((obj)=>{arrprecio[obj.titulo_lista] = obj.precio;});   
-        
-        connection.query('SELECT * FROM facturas WHERE id_recepcion= ?;',[results[0][0].id_recepcion],(error,factura)=>{
+        var validadorfactura=true;
+        connection.query('SELECT * FROM facturas WHERE id_recepcion= ? AND pago_completado=0 ;SELECT * FROM reparaciones_pendientes WHERE id_recepcion= ?',[results[0][0].id_recepcion,results[0][0].id_recepcion],(error,factura)=>{
             if(error){throw error;}
-            console.log(factura);
+            if (factura[0].length==0) {
+                validadorfactura=false;
+            }
             res.render('cliente', {
                 titulo: 'mi perfil',
                 rol:req.session.rol,
@@ -61,8 +63,11 @@ router.get('/cliente', (req, res) => {
                 vehiculos:arrvehiculos,
                 arrdescripcion:arrdescripcion,
                 arrprecio:arrprecio,
-                factura:factura[0]
+                factura:factura[0][0],
+                reparaciones_pendientes:factura[1],
+                validadorfactura:validadorfactura
             })
+            
         })
         
     })
