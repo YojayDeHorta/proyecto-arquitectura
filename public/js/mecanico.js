@@ -46,3 +46,17 @@ formReparacion.addEventListener("submit", (e) => {
 
     }
 });
+
+
+$(document).ready(function() {
+    $('#tablamecanico').DataTable({
+        "language": {
+        "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+        }
+    });
+    $('#tabladisponibles').DataTable({
+        "language": {
+        "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+        }
+    });
+} );
