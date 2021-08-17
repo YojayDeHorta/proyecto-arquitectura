@@ -143,6 +143,8 @@ a {
 #pills-1 .Extra div p{
     font-size: 0.7vw;
     margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 
@@ -431,3 +433,4 @@ text-align: center;
 }
 
 /*-----------FACTURA-------------*/
+
