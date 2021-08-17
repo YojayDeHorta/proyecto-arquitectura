@@ -9,10 +9,10 @@
                 <% if (rol=='admin') { %> 
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/admin"><%= rol %> <i class="fas fa-toolbox"></i></a>
+                        <a class="nav-link active" aria-current="page" href="/admin"><%= rol %><i class="fas fa-toolbox"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/mecanicos">Personal disponible<i class="fas fa-cogs"></i></a>
+                        <a class="nav-link active" aria-current="page" href="/mecanicos">Personal disponible<i class="fas fa-house-user"></i></a>
                     </li>                    
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/vehiculos">Vehiculos en bodega<i class="fas fa-car"></i></a>
@@ -20,7 +20,7 @@
                 <% } else {%>
                     <% if (rol=='cliente') { %>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/cliente">Perfil y compras<i class="fas fa-concierge-bell"></i></a>
+                            <a class="nav-link active" aria-current="page" href="/cliente">Perfil y compras<i class="fas fa-user-tie"></i></a>
                         </li>
                     <% } %> 
                     <% if (rol=='mecanico') { %>
@@ -39,7 +39,7 @@
                 <% } %>
                 <% if (locals.rol) { %>
                     <li class="nav-item">
-                        <a class="nav-link" href="/cerrarsesion">cerrar sesion<i class="fas fa-users"></i></a>
+                        <a class="nav-link" href="/cerrarsesion">cerrar sesion<i class="fas fa-door-open"></i></a>
                     </li> 
                 <% } else {%>
                     <li class="nav-item">
