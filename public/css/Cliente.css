@@ -391,7 +391,7 @@ text-align: center;
 .Cuarto div {
     border: 1px solid dimgray;
     text-align: center;
-    width: 33%;
+    width: 48%;
     margin-left: 10px;
 }
 
@@ -406,8 +406,8 @@ text-align: center;
     text-align: center;
     border: 1px solid black;
     margin-top: 10px;
-    width: 32.1%;
-    margin-left: 5px;
+  width: 48%;
+    margin-left: 10px;
     margin-bottom: 5px; 
 }
 
