@@ -122,6 +122,18 @@ router.get('/registro', (req, res) => {
         rol:''
     })
 })
+router.post('/editfactura/:id_factura', (req, res) => {
+    const id_factura=req.params.id_factura;
+    const estadopago='pago realizado'
+    console.log(id_factura);
+    connection.query('UPDATE facturas SET estado_pago=? WHERE id_factura = ?',[estadopago,id_factura],(error,results)=>{
+        if(error){
+            console.log(error);
+        }else{
+            res.json('1');
+        }
+    })
+})
 //rutas post
 
 

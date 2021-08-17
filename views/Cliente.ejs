@@ -209,7 +209,7 @@
                                         <tr>
                                             <td>TOTAL</td>
                                             <td>
-                                                <%= factura.costo_total %>$ dolares</td>
+                                                $<%= factura.costo_total %> dolares</td>
                                         </tr>
                                     </table>
                                 </div>
@@ -246,27 +246,24 @@
                                                 <table>
                                                     <tr>
                                                         <td>
-                                                            <input type="text" placeholder="Numero De Tarjeta">
+                                                            <input type="text" placeholder="Nombre Completo" required>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <input type="text" placeholder="Nombre Completo">
+                                                            <input type="text" placeholder="Numero De Tarjeta" required>
                                                         </td>
                                                     </tr>
+                                                    
                                                     <tr>
                                                         <td>
-                                                            <input type="text" placeholder="Fecha de Experiencia">
+                                                            <input type="text" placeholder="Fecha de Vencimiento" required>
                                                         </td>
                                                     </tr>
+                                                    
                                                     <tr>
                                                         <td>
-                                                            <input type="text" placeholder="VÁLIDA HASTA ">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <input type="text" placeholder="CVV">
+                                                            <input type="text" placeholder="CVV" required>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -278,7 +275,10 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                        <button type="button" class="btn btn-primary">Pagar</button>
+                                        <% if (locals.factura) { %>
+                                            <button type="button" onclick="pagarfactura('<%= factura.id_factura %>')" class="btn btn-primary">Pagar</button>
+                                        <% } %>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -322,7 +322,7 @@
                                     <%= reparacion.estado_reparacion %>
                                 </td>
                                 <td>
-                                    <%= arrprecio[reparacion.descripcion_reparacion] %>$ </td>
+                                    $<%= arrprecio[reparacion.descripcion_reparacion] %> </td>
                                 <td>
                                     <div class="modal fade" id="Video_<%= reparacion.id_recepcion%>" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
                                         <div class="modal-dialog modal-dialog-centered">

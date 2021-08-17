@@ -139,10 +139,12 @@
                                 <td><%= factura.nombre_cliente %> </td>
                                 <td><%= factura.nombre_vehiculo %> </td>
                                 <td><%= factura.reparaciones_realizadas %> </td>
-                                <td><%= factura.costo_total %>$ </td>
-                                <td><%= factura.estado_pago %> </td>
-                                
-                                
+                                <td>$<%= factura.costo_total %> </td>
+                                <td><%= factura.estado_pago %> 
+                                <% if (factura.estado_pago=='esperando pago del cliente') { %>
+                                    <button type="button" onclick="pagarfactura('<%= factura.id_factura %>')" class="btn btn-primary mt-2 mb-2">Pagar manualmente</button>
+                                <% } %>
+                                </td>
                             </tr>
                             <% }) %>
                             

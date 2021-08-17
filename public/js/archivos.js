@@ -80,3 +80,30 @@ function generarFactura(id_recepcion,nombre_cliente,nombre_vehiculo,reparaciones
 
 
 
+function pagarfactura(id_factura){
+  fetch("/editfactura/"+id_factura, { method: "POST"}).then((res) => res.json())
+  .then((data) => {
+    switch (data) {
+      case "1":
+        Swal.fire({
+          icon: 'success',
+          title: 'Pago realizado exitosamente',
+        }).then(function() {
+          window.location = "/admin";
+        })
+       
+        break;
+      case "2":
+        Swal.fire({
+          icon: 'error',
+          title: 'algo salio mal...',
+          text: 'hubo un problema con el pago',
+          footer: 'intentalo de nuevo'
+        })
+        break;
+      default:
+        break;
+    }
+
+  });
+}

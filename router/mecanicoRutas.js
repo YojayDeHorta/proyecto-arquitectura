@@ -7,7 +7,7 @@ const crud=require('../controllers/crud');
 //cosas para el rol mecanico
 router.get('/mecanico', (req, res) => {
     if(req.session.loggedin&&req.session.rol=='mecanico'){
-        var estado='sin asignacion'
+        var estado='no asignado'
     connection.query('SELECT * FROM reparaciones_pendientes WHERE mecanico_encargado= ?;SELECT * FROM vehiculos;SELECT * FROM reparaciones_pendientes WHERE estado_reparacion= ?',[req.session.id_mecanico,estado],(error,results)=>{
         if(error)throw error;
         var arrvehiculos = {};results[1].map((obj)=>{arrvehiculos[obj.id_vehiculo] = obj.placa+" "+obj.marca+" "+obj.modelo;});   
