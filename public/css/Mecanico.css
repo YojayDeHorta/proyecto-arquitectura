@@ -84,5 +84,14 @@ table tbody .btn{
 }
 
 
+.Principal .nav button:hover,.Principal .nav button.active {
+
+    background-color: transparent;
+    color:black;
+    border-bottom: 3px solid #8892c6;
+    border-radius: 0;
+}
+
+
 /*.tab-system button:hover,.tab-system button.active*/
 
