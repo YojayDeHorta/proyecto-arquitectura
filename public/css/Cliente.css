@@ -1,5 +1,4 @@
-
-.Pagina_Principal{
+.Pagina_Principal {
     height: 80%;
 }
 
@@ -20,72 +19,72 @@ a {
 
 }
 
-.nav li{
+.nav li {
     margin-left: 35px;
 }
 
-.nav li button{
+.nav li button {
     color: black;
 }
 
-.nav li button i{
+.nav li button i {
     margin-left: 10px;
 }
 
-.Bienvenido{
+.Bienvenido {
     margin-bottom: 80px;
 }
 
 /*----------OPCIONES DE USUARIO-------------------*/
 
-.tab-content{
+.tab-content {
     margin-top: 50px;
 }
 
-#pills-1{
+#pills-1 {
     height: 100%;
 }
 
-#pills-1 .input{
+#pills-1 .input {
     text-align: center;
     border: 1px solid black;
-    
-    
+
+
     margin-left: 70px;
     margin-top: 10px;
-    
+
 }
 
-#pills-1 .input label{
+#pills-1 .input label {
     font-size: 2vw;
     margin-bottom: 50px;
     /*border-bottom: 3px solid red;*/
-    background-color:transparent ;
+    background-color: transparent;
     padding: 2px;
     color: black;
     margin-top: 20px;
 }
 
-#pills-1 .input select{
+#pills-1 .input select {
     position: relative;
     margin-bottom: 50px;
     width: 73%;
     left: 15%;
 }
 
-#pills-1 .input .btn-Usuario{
+#pills-1 .input .btn-Usuario {
     position: relative;
     text-align: center;
     margin-bottom: 50px;
     left: -33%;
 }
 
-#pills-1 .input .btn-Usuario button{
+#pills-1 .input .btn-Usuario button {
     margin-left: 30px;
 }
 
 
-#pills-1 .input #Info{
+#pills-1 .input #Info {
     position: relative;
     border: 1px solid blue;
     width: 50%;
@@ -93,17 +92,17 @@ a {
     top: -20px;
 }
 
-#pills-1 .container-fluid-1{
+#pills-1 .container-fluid-1 {
     border: 0px solid black;
 }
 
-#pills-1 .container-fluid-1 label{
+#pills-1 .container-fluid-1 label {
     position: relative;
     top: -10px;
 }
 
 
-#pills-1  .Extra{
+#pills-1 .Extra {
     position: relative;
     top: -25px;
     display: flex;
@@ -113,7 +112,7 @@ a {
     border: 0px solid darkred;
 }
 
-#pills-1 .Extra div{
+#pills-1 .Extra div {
     width: 20%;
     border: 2px solid silver;
     background-color: rgb(248, 249, 250);
@@ -121,26 +120,26 @@ a {
     margin-top: 10px;
 }
 
-#pills-1 .Extra div:hover{
-   border: 1px solid black;
+#pills-1 .Extra div:hover {
+    border: 1px solid black;
 }
 
 
-#pills-1 .Extra div .form-check-input{
+#pills-1 .Extra div .form-check-input {
     margin-top: 50px;
 }
 
-#pills-1 .Extra div h5{
+#pills-1 .Extra div h5 {
     font-size: 0.9vw;
     margin-top: 10px;
 }
 
-#pills-1 .Extra div i{
+#pills-1 .Extra div i {
     font-size: 3vw;
     margin-bottom: 10px;
 }
 
-#pills-1 .Extra div p{
+#pills-1 .Extra div p {
     font-size: 0.7vw;
     margin-top: 10px;
     padding-left: 10px;
@@ -149,50 +148,50 @@ a {
 
 
 
-#pills-1 button{
+#pills-1 button {
     position: relative;
     width: 40%;
     left: 30%;
-    margin-bottom:20px ;
+    margin-bottom: 20px;
     margin-top: 15px;
 }
 
 
-#pills-2{
+#pills-2 {
     text-align: center;
 }
 
-#pills-2 button{
+#pills-2 button {
     margin-top: 30px;
-    margin-bottom:20px ;
+    margin-bottom: 20px;
 }
 
-#pills-3{
-text-align: center;
+#pills-3 {
+    text-align: center;
 }
 
-#pills-3 table{
+#pills-3 table {
     position: relative;
     text-align: center;
 }
 
-#pills-3 h1{
+#pills-3 h1 {
     position: relative;
-    border-bottom:5px solid darkred ;
+    border-bottom: 5px solid darkred;
     width: 25%;
     left: 40%;
     margin-bottom: 50px;
 }
 
 
-#pills-3 .Extra{
+#pills-3 .Extra {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
 }
 
-#pills-3 .Extra div{
+#pills-3 .Extra div {
     border: 1px solid red;
     width: 30%;
     margin-left: 20px;
@@ -200,58 +199,58 @@ text-align: center;
     box-shadow: 0px 0px 0px 1px black;
 }
 
-#pills-3 .Extra div h5{
+#pills-3 .Extra div h5 {
     font-size: 1.5vw;
 }
 
-#pills-3 .Extra div i{
+#pills-3 .Extra div i {
     font-size: 2.5vw;
     margin-top: 10px;
 }
 
-#pills-3 .Extra div p{
+#pills-3 .Extra div p {
     font-size: 1vw;
     margin-top: 20px;
 }
 
-#pills-3 .Extra div button{
+#pills-3 .Extra div button {
     margin-bottom: 20px;
     margin-top: 10px;
     margin-bottom: 20px;
-    
+
 }
 
-#Video_Icono{
+#Video_Icono {
     position: relative;
     text-align: center;
     top: 10px;
-    
+
 }
 
-#Video_Icono i{
+#Video_Icono i {
     position: relative;
     font-size: 3vw;
     padding: 5px;
 }
 
-#myVideo{
+#myVideo {
     position: relative;
     top: 20px;
     left: 6%;
 }
 
-.btn-close{
+.btn-close {
     position: relative;
     top: -135px;
 }
 
-#btn_1{
+#btn_1 {
     position: relative;
     top: 1px;
 }
 
 
-.text-center a{
+.text-center a {
     margin-left: 15px;
     width: 25%;
 }
@@ -310,7 +309,7 @@ text-align: center;
 
 }
 
-.Primera .div_2 table td{   
+.Primera .div_2 table td {
     font-size: 13px;
     border: 1px solid transparent;
 }
@@ -360,7 +359,7 @@ text-align: center;
 }
 
 .Tercera .div_2 {
-   border: 2px solid transparent;
+    border: 2px solid transparent;
     position: relative;
     text-align: left;
     color: black;
@@ -369,19 +368,19 @@ text-align: center;
 
 }
 
-.Tercera .div_2 table{
+.Tercera .div_2 table {
     position: relative;
-   border: 2px solid transparent;
+    border: 2px solid transparent;
     width: 100%;
 
-} 
+}
 
-.Tercera .div_2 table td{
+.Tercera .div_2 table td {
     /*border: 5px solid black;*/
     border: 1px solid transparent;
 }
 
-.Tercera .Total{
+.Tercera .Total {
     background-color: dimgrey;
     color: white;
     text-align: center;
@@ -395,7 +394,7 @@ text-align: center;
 }
 
 .Cuarto div {
-font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
     text-align: center;
     width: 48%;
     margin-left: 10px;
@@ -407,40 +406,40 @@ font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
     flex-wrap: wrap;
 }
 
-.Descripcion div{
+.Descripcion div {
     position: relative;
     text-align: center;
 
     margin-top: 10px;
-  width: 48%;
+    width: 48%;
     margin-left: 10px;
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
 }
 
-.Sub_Total{
+.Sub_Total {
     margin-top: 10px;
     margin-bottom: 10px;
     position: relative;
     text-align: center;
     left: 60%;
-    margin-top:10px ;
+    margin-top: 10px;
     width: 40%;
 }
 
 
-.Sub_Total  td{
+.Sub_Total td {
 
     width: 5%;
 }
 
-.Sub_Total .title-factura{
+.Sub_Total .title-factura {
     background-color: dimgrey;
     color: white;
 }
 
 /*-----------FACTURA-------------*/
 
-table{
+table {
     border: 0;
 }
 
@@ -448,49 +447,88 @@ table tr {
     border: 0;
 }
 
-#td_editar a{
+#td_editar a {
     width: 50%;
     margin-top: 10px;
     color: white !important;
 }
 
-.Bienvenido{
+.Bienvenido {
     position: relative;
     left: -13%;
     margin-bottom: 20px;
 }
 
-.Bienvenido h1{
-   text-transform: capitalize;
+.Bienvenido h1 {
+    text-transform: capitalize;
 
 }
 
 /*--------MODAL VIDEO-------------*/
 
-.btn-close{
+.btn-close {
     position: relative;
     top: 2px;
     font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
 }
 
-.modal-body{
-  /*  border: 5px solid black;*/
+.modal-body {
+    /*  border: 5px solid black;*/
 }
 
-.modal-header{
+.modal-header {
     text-transform: capitalize;
 }
 
 
-.modal-body #myVideo{
+.modal-body #myVideo {
     position: relative;
-   /* border: 5px solid red;*/
+    /* border: 5px solid red;*/
     left: 1%;
     top: 2px;
 }
 
 
-.P_Factura{
+.P_Factura {
     position: relative;
     left: -4%;
+}
+
+
+.Pago div table {
+    width: 130%;
+     border: 10px solid transparent;
+
+}
+
+.Pago div table tr {
+    display: flex;
+     border: 10px solid transparent;
+
+}
+
+.Pago div table tr td input {
+    width: 130%;
+    outline: none;
+    text-decoration: none;
+    margin-top: 25px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+
+}
+
+.modal-body {
+    display: flex;
+}
+
+.modal-body div img {
+    position: relative;
+    left: 35%;
+    top: 30px;
+}
+
+.modal-header button{
+    position: relative;
+    top: -25px;
 }
