@@ -443,3 +443,44 @@ table{
 table tr {
     border: 0;
 }
+
+#td_editar a{
+    width: 50%;
+    margin-top: 10px;
+    color: white !important;
+}
+
+.Bienvenido{
+    position: relative;
+    left: -13%;
+    margin-bottom: 20px;
+}
+
+.Bienvenido h1{
+   text-transform: capitalize;
+
+}
+
+/*--------MODAL VIDEO-------------*/
+
+.btn-close{
+    position: relative;
+    top: 2px;
+    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+}
+
+.modal-body{
+  /*  border: 5px solid black;*/
+}
+
+.modal-header{
+    text-transform: capitalize;
+}
+
+
+.modal-body #myVideo{
+    position: relative;
+   /* border: 5px solid red;*/
+    left: 1%;
+    top: 2px;
+}
