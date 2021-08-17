@@ -95,3 +95,19 @@ exports.updateReparacion=(req,res)=>{
         }
     })
 }
+// facturas
+exports.generarFactura=(req,res)=>{
+    const datos=req.body;
+    conexion.query('INSERT INTO facturas SET ?',datos,(error,results)=>{
+        if(error){
+            if(error.errno==1062){
+                res.json('2');
+            }else{
+               console.log(error);  
+            }
+        }else{
+            res.json('1');
+            
+        }
+    })
+}

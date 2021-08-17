@@ -49,16 +49,21 @@ router.get('/cliente', (req, res) => {
         var arrdescripcion = {};results[2].map((obj)=>{arrdescripcion[obj.titulo_lista] = obj.descripcion_lista;});   
         var arrprecio = {};results[2].map((obj)=>{arrprecio[obj.titulo_lista] = obj.precio;});   
         
-        res.render('cliente', {
-            titulo: 'mi perfil',
-            rol:req.session.rol,
-            loggedin:true,
-            nombre:req.session.nombre,
-            reparaciones:results[0],
-            vehiculos:arrvehiculos,
-            arrdescripcion:arrdescripcion,
-            arrprecio:arrprecio,
+        connection.query('SELECT * FROM facturas WHERE id_recepcion= ?;',[results[0][0].id_recepcion],(error,factura)=>{
+            if(error){throw error;}
+            res.render('cliente', {
+                titulo: 'mi perfil',
+                rol:req.session.rol,
+                loggedin:true,
+                nombre:req.session.nombre,
+                reparaciones:results[0],
+                vehiculos:arrvehiculos,
+                arrdescripcion:arrdescripcion,
+                arrprecio:arrprecio,
+                factura:factura
+            })
         })
+        
     })
     }else{
         res.redirect('/')

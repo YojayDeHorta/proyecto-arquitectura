@@ -44,3 +44,37 @@ videoForm.addEventListener('submit', (e) => {
     });
 
 });
+//*************** parte de las facturas*********************
+
+function generarFactura(id_recepcion,nombre_cliente,nombre_vehiculo,reparaciones_realizadas,costo_total){
+  var factura=new Object();
+  factura.id_recepcion=id_recepcion
+  factura.nombre_cliente=nombre_cliente
+  factura.nombre_vehiculo=nombre_vehiculo
+  factura.reparaciones_realizadas=reparaciones_realizadas
+  factura.costo_total=costo_total
+  fetch("/generarfactura", {method: "POST",headers: {'Accept': 'application/json','Content-Type': 'application/json'},body: JSON.stringify(factura),})
+    .then((res) => res.json())
+    .then((data) => {
+      switch (data) {
+        case "1":
+          Swal.fire({
+            icon: 'success',
+            title: 'Factura generada exitosamente',
+          })
+          break;
+        case "2":
+          Swal.fire({
+            icon: 'error',
+            title: 'ya generaste una factura!',
+          })
+          break;
+        default:
+          break;
+      }
+
+    });
+}
+
+
+

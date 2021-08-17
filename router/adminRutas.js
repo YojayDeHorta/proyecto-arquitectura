@@ -49,6 +49,7 @@ router.get('/admin', (req, res) => {
         var arrvehiculos = {};results[1].map((obj)=>{arrvehiculos[obj.id_vehiculo] = obj.marca+" "+obj.modelo;});
         var arrclientes = {};results[2].map((obj)=>{arrclientes[obj.id_cliente] = obj.nombre;});
         var arrmecanicos = {};results[4].map((obj)=>{arrmecanicos[obj.id_mecanico] = obj.nombre;});
+        var arrreparaciones = {};results[5].map((obj)=>{arrreparaciones[obj.titulo_lista] = obj.precio;});
 
         var array=results[0].map(lista => {
              var resultado = results[3].filter(obj => {
@@ -68,13 +69,14 @@ router.get('/admin', (req, res) => {
             mecanicos:results[4],
             reparaciones_pendientes:array,
             arrmecanicos:arrmecanicos,
-            lista_reparaciones:results[5]
+            lista_reparaciones:results[5],
+            arrreparaciones:arrreparaciones
         })
         
     })
 })
 
-
+// ruta de subida de videos
 router.post('/subir/:id_recepcion',(req,res)=>{
     req.session.recepcionvideo=req.params.id_recepcion;
 
@@ -94,6 +96,9 @@ router.post('/subir/:id_recepcion',(req,res)=>{
 
     })
 })
+// ruta de generacion de facturas
+router.post('/generarfactura',crud.generarFactura)
+
 // crud mecanicos
 //READ
 router.get('/mecanicos', (req, res) => {

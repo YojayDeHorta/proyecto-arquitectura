@@ -34,13 +34,18 @@
                         <tbody>
                             <% var i=0; lista_recepcion.forEach(recepcion => { %>
                             <tr>
+                                <% var reparacioneslist='';  %> 
                                 <th><%= recepcion.id_recepcion %> </th>
                                 <th><%= arrclientes[recepcion.id_cliente] %></th>
                                 <th><%= arrvehiculos[recepcion.id_vehiculo] %> </th> 
                                 <th>
-                                    <% var j=1; reparaciones_pendientes[i].forEach(reparacion => { %>
+                                    <% var j=1;var precio=0;reparaciones_pendientes[i].forEach(reparacion => { %>
                                         <%= j %> 
+                                        <% if (j!=1) { reparacioneslist+=', '} %>
                                         <%= reparacion.descripcion_reparacion %>
+                                        
+                                        <% reparacioneslist+=(reparacion.descripcion_reparacion) %> 
+                                        <% precio+=arrreparaciones[reparacion.descripcion_reparacion] %> 
                                         <br> 
                                         
                                     <%j++  }) %>
@@ -88,12 +93,13 @@
                                         <a class="btn btn-primary bg-success" data-bs-toggle="modal" href="#Video_<%= recepcion.id_recepcion%>" role="button"><i class="fas fa-video"></i></a>
                                         
                                     <% } else { %>
-                                        <button id="video" onclick="abrirformvideo('<%= recepcion.id_recepcion%>'  )" class="btn btn-dark">subir video</button> 
+                                        <button id="video" onclick="abrirformvideo('<%= recepcion.id_recepcion%>')" class="btn btn-dark">subir video</button> 
                                     <% }%>
                                 </td>
                                 <td class="text-center">
                                     <a onclick="confirmar('<%= recepcion.id_recepcion %>','<%= arrclientes[recepcion.id_cliente] %>')" class="btnBorrar btn btn-danger" id="borrar_usuario">Eliminar</a>
-                                    <a class="btnBorrar btn btn-success" id="borrar_usuario">Generar factura</a>
+                                    <a onclick="generarFactura('<%= recepcion.id_recepcion %>','<%= arrclientes[recepcion.id_cliente] %>','<%= arrvehiculos[recepcion.id_vehiculo] %>','<%= reparacioneslist %>','<%= precio %>')"
+                                        class="btnBorrar btn btn-success" id="borrar_usuario">Generar factura</a>
                                 </td>
                                 <% i++ %> 
                             </tr>
