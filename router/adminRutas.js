@@ -44,7 +44,7 @@ router.get('/adminLogin', (req, res) => {
 router.get('/admin', (req, res) => {
     req.session.rol='admin';
     req.session.loggedin=true;
-    connection.query('SELECT * FROM hojas_recepcion;SELECT * FROM vehiculos;SELECT * FROM clientes;SELECT * FROM reparaciones_pendientes;SELECT * FROM mecanicos;SELECT * FROM lista_Reparaciones',(error,results)=>{
+    connection.query('SELECT * FROM hojas_recepcion;SELECT * FROM vehiculos;SELECT * FROM clientes;SELECT * FROM reparaciones_pendientes;SELECT * FROM mecanicos;SELECT * FROM lista_Reparaciones;SELECT * FROM facturas',(error,results)=>{
         if(error){throw error;}
         var arrvehiculos = {};results[1].map((obj)=>{arrvehiculos[obj.id_vehiculo] = obj.marca+" "+obj.modelo;});
         var arrclientes = {};results[2].map((obj)=>{arrclientes[obj.id_cliente] = obj.nombre;});
@@ -70,7 +70,8 @@ router.get('/admin', (req, res) => {
             reparaciones_pendientes:array,
             arrmecanicos:arrmecanicos,
             lista_reparaciones:results[5],
-            arrreparaciones:arrreparaciones
+            arrreparaciones:arrreparaciones,
+            facturas:results[6],
         })
         
     })

@@ -61,7 +61,9 @@ function generarFactura(id_recepcion,nombre_cliente,nombre_vehiculo,reparaciones
           Swal.fire({
             icon: 'success',
             title: 'Factura generada exitosamente',
-          })
+          }).then(function() {window.location = "/admin";})
+            
+          
           break;
         case "2":
           Swal.fire({

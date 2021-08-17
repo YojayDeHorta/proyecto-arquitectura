@@ -4,6 +4,11 @@ $(document).ready(function() {
         "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
         }
     });
+    $('#tablafactura').DataTable({
+      "language": {
+      "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+      }
+  });
 } );
 const modalRecepcion= new bootstrap.Modal(
     document.getElementById("modal-recepcion")
@@ -97,7 +102,7 @@ formReparacion.addEventListener("submit", (e) => {
   object2=JSON.parse(object);
   datosreparacion.descripcion_reparacion=datos.get('descripcion_reparacion');
   datosreparacion.mecanico_encargado=0;
-  datosreparacion.estado_reparacion='sin asignacion';
+  datosreparacion.estado_reparacion='no asignado';
   console.log(datosreparacion);
   //submit de creacion
       fetch("/addreparacionadmin", {method: "POST",headers: {'Accept': 'application/json','Content-Type': 'application/json'},body:  JSON.stringify(datosreparacion)})

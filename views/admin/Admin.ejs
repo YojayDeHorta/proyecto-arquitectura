@@ -13,7 +13,9 @@
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-1" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Administrar Hojas de reparacion&nbsp;&nbsp;<i class="fas fa-car"></i></button>
                 </li>
-                
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-2" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Ver facturas&nbsp;&nbsp;<i class="fas fa-users"></i></button>
+                </li>
             </ul>
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -64,12 +66,15 @@
                                     
                                 </th>
                                 <td>
-                                    <% var j=1; reparaciones_pendientes[i].forEach(reparacion => { %>
-                                    <%= j %> 
+                                    <% var rep=1;var cont=0; reparaciones_pendientes[i].forEach(reparacion => { %>
+                                    <%= rep %> 
                                     <%= reparacion.estado_reparacion %>
                                     <br> 
+                                    <% if (reparacion.estado_reparacion=='reparacion realizada') {cont++} %>
+                                     
                                     
-                                    <%j++  }) %>
+                                    
+                                    <%rep++  }) %>
                                 </td>
                                 <td>
                                     <% if (recepcion.video) { %>
@@ -98,12 +103,52 @@
                                 </td>
                                 <td class="text-center">
                                     <a onclick="confirmar('<%= recepcion.id_recepcion %>','<%= arrclientes[recepcion.id_cliente] %>')" class="btnBorrar btn btn-danger" id="borrar_usuario">Eliminar</a>
-                                    <a onclick="generarFactura('<%= recepcion.id_recepcion %>','<%= arrclientes[recepcion.id_cliente] %>','<%= arrvehiculos[recepcion.id_vehiculo] %>','<%= reparacioneslist %>','<%= precio %>')"
+                                    <% if (rep==cont+1) { %>
+                                     <a onclick="generarFactura('<%= recepcion.id_recepcion %>','<%= arrclientes[recepcion.id_cliente] %>','<%= arrvehiculos[recepcion.id_vehiculo] %>','<%= reparacioneslist %>','<%= precio %>')"
                                         class="btnBorrar btn btn-success" id="borrar_usuario">Generar factura</a>
+                                    <% } %>
+                                    
                                 </td>
                                 <% i++ %> 
                             </tr>
                             <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <table id="tablafactura" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">FACTURA #</th>
+                                <th scope="col"># DE RECEPCION:</th>
+                                <th scope="col">FECHA DE FACTURACION</th>
+                                <th scope="col">NOMBRE DEL CLIENTE</th>
+                                <th scope="col">NOMBRE DEL VEHICULO</th>
+                                <th scope="col">REPARACIONES REALIZADAS</th>
+                                <th scope="col">COSTO TOTAL</th>
+                                <th scope="col">ESTADO DEL PAGO</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% facturas.forEach(factura => { %>
+                             <tr>
+                                <td><%= factura.id_factura %> </td>
+                                <td><%= factura.id_recepcion %> </td>
+                                <td><%= factura.fecha_generacion %> </td>
+                                <td><%= factura.nombre_cliente %> </td>
+                                <td><%= factura.nombre_vehiculo %> </td>
+                                <td><%= factura.reparaciones_realizadas %> </td>
+                                <td><%= factura.costo_total %>$ </td>
+                                <td><%= factura.estado_pago %> </td>
+                                
+                                
+                            </tr>
+                            <% }) %>
+                            
+                            
+                            
+                            </tr>
                         </tbody>
                     </table>
                 </div>

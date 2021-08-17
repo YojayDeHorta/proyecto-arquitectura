@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-08-2021 a las 08:08:35
+-- Tiempo de generación: 17-08-2021 a las 09:15:15
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.0
 
@@ -64,19 +64,18 @@ CREATE TABLE IF NOT EXISTS `facturas` (
   `nombre_vehiculo` varchar(50) NOT NULL,
   `reparaciones_realizadas` varchar(500) NOT NULL,
   `costo_total` int(11) NOT NULL,
-  `pago_completado` varchar(2) NOT NULL,
+  `estado_pago` varchar(30) NOT NULL,
   `fecha_generacion` varchar(20) NOT NULL,
   PRIMARY KEY (`id_factura`),
   UNIQUE KEY `recepcion_unique` (`id_recepcion`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `facturas`
 --
 
-INSERT INTO `facturas` (`id_factura`, `id_recepcion`, `nombre_cliente`, `nombre_vehiculo`, `reparaciones_realizadas`, `costo_total`, `pago_completado`, `fecha_generacion`) VALUES
-(11, 66, 'victor davila', 'nissan citra', 'REPARACIÓN DEL AIRE ACONDICIONADO, REPARACIÓN DE MOTOR, REPARACIÓN DEL SISTEMA DE ENCENDIDO CONVENCIONAL', 203, 'no', '2021/08/17'),
-(12, 56, 'yojay esteban', 'Ford C-Max', 'REPARACIÓN DE TREN DELANTERO', 90, 'no', '2021/08/17');
+INSERT INTO `facturas` (`id_factura`, `id_recepcion`, `nombre_cliente`, `nombre_vehiculo`, `reparaciones_realizadas`, `costo_total`, `estado_pago`, `fecha_generacion`) VALUES
+(13, 56, 'yojay esteban', 'Ford C-Max', 'REPARACIÓN DE TREN DELANTERO', 90, 'esperando pago del cliente', '2021/08/17');
 
 -- --------------------------------------------------------
 
@@ -188,9 +187,9 @@ CREATE TABLE IF NOT EXISTS `reparaciones_pendientes` (
 --
 
 INSERT INTO `reparaciones_pendientes` (`id_reparacion`, `id_recepcion`, `descripcion_reparacion`, `estado_reparacion`, `mecanico_encargado`, `id_cliente`, `id_vehiculo`) VALUES
-(17, 56, 'REPARACIÓN DE TREN DELANTERO', 'mecanico asignado, en proceso', 1, 3, 1),
-(21, 66, 'REPARACIÓN DEL AIRE ACONDICIONADO', 'sin asignacion', 0, 7, 22),
-(22, 66, 'REPARACIÓN DE MOTOR', 'sin asignacion', 0, 7, 22),
+(17, 56, 'REPARACIÓN DE TREN DELANTERO', 'reparacion realizada', 1, 3, 1),
+(21, 66, 'REPARACIÓN DEL AIRE ACONDICIONADO', 'no asignado', 0, 7, 22),
+(22, 66, 'REPARACIÓN DE MOTOR', 'no asignado', 0, 7, 22),
 (23, 66, 'REPARACIÓN DEL SISTEMA DE ENCENDIDO CONVENCIONAL', 'mecanico asignado, en proceso', 1, 7, 22);
 
 -- --------------------------------------------------------
