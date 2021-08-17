@@ -190,6 +190,7 @@ table tbody tr td i{
 
 #btncrear{
 	margin-bottom: 25px;
+
 }
 
 /**/
@@ -198,10 +199,33 @@ table tbody tr td i{
 .Btn_Personal button{
 	width: 30%;
 	margin-left: 20px;
+	 text-transform: capitalize;
 }
 
 .Btn_Personal a{
 	position: relative;
+	 text-transform: capitalize;
 	width: 30%;
 	top: -5px;
+}
+
+
+.Principal ul{
+	position: relative;
+	text-transform: lowercase;
+	top: 50px;
+	font-size: 25px;
+}
+
+.Principal ul li button{
+	font-size: 25px;
+}
+
+
+.Principal .nav button:hover,.Principal .nav button.active {
+
+    background-color: transparent;
+    color:black;
+    border-bottom: 3px solid #6d6552;
+    border-radius: 0;
 }

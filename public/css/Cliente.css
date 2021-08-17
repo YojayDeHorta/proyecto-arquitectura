@@ -261,7 +261,7 @@ text-align: center;
 .T-Factura {
     position: relative;
     width: 35%;
-    border: 3px solid rgb(248, 249, 250);
+    border: 5px solid rgb(248, 249, 250);
     background-color: rgb(248, 249, 250);
     border-radius: 10px;
     left: 29%;
@@ -277,6 +277,7 @@ text-align: center;
 
 .Primera div {
     margin-top: 15px;
+    border: none;
 }
 
 .Primera .div_1 {
@@ -310,7 +311,8 @@ text-align: center;
 }
 
 .Primera .div_2 table td{   
-    font-size: 15px;
+    font-size: 13px;
+    border: 1px solid transparent;
 }
 
 .Segundo {
@@ -352,12 +354,13 @@ text-align: center;
 
 .Tercera div {
     width: 50%;
+    text-transform: capitalize;
     margin-left: 10px;
     margin-right: 10px;
 }
 
 .Tercera .div_2 {
-    /*border: 5px solid red;*/
+   border: 2px solid transparent;
     position: relative;
     text-align: left;
     color: black;
@@ -368,13 +371,14 @@ text-align: center;
 
 .Tercera .div_2 table{
     position: relative;
-    /*border: 1px solid red;*/
+   border: 2px solid transparent;
     width: 100%;
 
 } 
 
 .Tercera .div_2 table td{
     /*border: 5px solid black;*/
+    border: 1px solid transparent;
 }
 
 .Tercera .Total{
@@ -391,7 +395,7 @@ text-align: center;
 }
 
 .Cuarto div {
-    border: 1px solid dimgray;
+font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
     text-align: center;
     width: 48%;
     margin-left: 10px;
@@ -406,7 +410,7 @@ text-align: center;
 .Descripcion div{
     position: relative;
     text-align: center;
-    border: 1px solid black;
+
     margin-top: 10px;
   width: 48%;
     margin-left: 10px;
@@ -483,4 +487,10 @@ table tr {
    /* border: 5px solid red;*/
     left: 1%;
     top: 2px;
+}
+
+
+.P_Factura{
+    position: relative;
+    left: -4%;
 }

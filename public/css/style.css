@@ -350,3 +350,8 @@ table tr{
     background-color: #777B7E;
 }
 
+
+
+.collapse .navbar-nav li a{
+    text-transform: capitalize;
+}
