@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-08-2021 a las 09:15:15
+-- Tiempo de generación: 17-08-2021 a las 09:53:21
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.0
 
@@ -68,14 +68,14 @@ CREATE TABLE IF NOT EXISTS `facturas` (
   `fecha_generacion` varchar(20) NOT NULL,
   PRIMARY KEY (`id_factura`),
   UNIQUE KEY `recepcion_unique` (`id_recepcion`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `facturas`
 --
 
 INSERT INTO `facturas` (`id_factura`, `id_recepcion`, `nombre_cliente`, `nombre_vehiculo`, `reparaciones_realizadas`, `costo_total`, `estado_pago`, `fecha_generacion`) VALUES
-(13, 56, 'yojay esteban', 'Ford C-Max', 'REPARACIÓN DE TREN DELANTERO', 90, 'esperando pago del cliente', '2021/08/17');
+(14, 56, 'yojay esteban', 'Ford C-Max', 'REPARACIÓN DE TREN DELANTERO', 90, 'esperando pago del cliente', '2021/08/17');
 
 -- --------------------------------------------------------
 
@@ -100,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `hojas_recepcion` (
 
 INSERT INTO `hojas_recepcion` (`id_recepcion`, `piezas_necesarias`, `id_vehiculo`, `id_cliente`, `video`) VALUES
 (56, 'no registradas', 1, 3, 1),
-(66, 'no registradas', 22, 7, 1);
+(66, 'no registradas', 22, 7, 0);
 
 -- --------------------------------------------------------
 
@@ -147,20 +147,19 @@ CREATE TABLE IF NOT EXISTS `mecanicos` (
   `cedula` int(14) NOT NULL,
   `nombre` varchar(40) NOT NULL,
   `email` varchar(40) NOT NULL,
-  `disponibilidad` varchar(30) NOT NULL,
   `password` varchar(50) NOT NULL,
   PRIMARY KEY (`id_mecanico`),
   UNIQUE KEY `email_unique` (`email`),
   UNIQUE KEY `cedula_unique` (`cedula`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `mecanicos`
 --
 
-INSERT INTO `mecanicos` (`id_mecanico`, `cedula`, `nombre`, `email`, `disponibilidad`, `password`) VALUES
-(1, 12547512, 'Juan Pablo', 'Juan@gmail.com', 'ocupado', '12345678'),
-(8, 28738728, 'pedro fuentes', 'pedro@gmail.com', 'libre', '12345678');
+INSERT INTO `mecanicos` (`id_mecanico`, `cedula`, `nombre`, `email`, `password`) VALUES
+(1, 12547512, 'Juan Pablo', 'Juan@gmail.com', '12345678'),
+(8, 28738728, 'pedro madrid', 'pedro@gmail.com', '12345678');
 
 -- --------------------------------------------------------
 
@@ -208,7 +207,7 @@ CREATE TABLE IF NOT EXISTS `vehiculos` (
   PRIMARY KEY (`id_vehiculo`),
   UNIQUE KEY `placa_unique` (`placa`),
   KEY `id_cliente` (`id_cliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `vehiculos`

@@ -4,7 +4,6 @@ const conexion=require('../database/db')
 
 exports.saveMecanicos=(req,res)=>{
     const datos=req.body;
-    datos.disponibilidad='libre';
     conexion.query('INSERT INTO mecanicos SET ?',datos,(error,results)=>{
         if(error){
             if(error.errno==1062){
