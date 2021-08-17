@@ -197,7 +197,7 @@ table tbody tr td i{
 
 
 .Btn_Personal button{
-	width: 30%;
+	width: 60%;
 	margin-left: 20px;
 	 text-transform: capitalize;
 }
@@ -205,7 +205,7 @@ table tbody tr td i{
 .Btn_Personal a{
 	position: relative;
 	 text-transform: capitalize;
-	width: 30%;
+	width: 60%;
 	top: -5px;
 }
 
