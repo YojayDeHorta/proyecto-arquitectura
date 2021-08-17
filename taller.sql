@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-08-2021 a las 21:09:11
+-- Tiempo de generación: 17-08-2021 a las 04:11:57
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.0
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `taller`
 --
+CREATE DATABASE IF NOT EXISTS `taller` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `taller`;
 
 -- --------------------------------------------------------
 
@@ -73,19 +75,19 @@ CREATE TABLE IF NOT EXISTS `hojas_recepcion` (
   `piezas_necesarias` varchar(500) NOT NULL,
   `id_vehiculo` int(11) NOT NULL,
   `id_cliente` int(11) NOT NULL,
+  `video` tinyint(1) NOT NULL,
   PRIMARY KEY (`id_recepcion`),
   KEY `hojas_de_recepcion_ibfk_2` (`id_vehiculo`),
   KEY `hojas_de_recepcion_ibfk_3` (`id_cliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `hojas_recepcion`
 --
 
-INSERT INTO `hojas_recepcion` (`id_recepcion`, `piezas_necesarias`, `id_vehiculo`, `id_cliente`) VALUES
-(1, 'no registradas', 1, 3),
-(2, 'no registradas', 21, 13),
-(55, 'no registradas', 2, 7);
+INSERT INTO `hojas_recepcion` (`id_recepcion`, `piezas_necesarias`, `id_vehiculo`, `id_cliente`, `video`) VALUES
+(56, 'no registradas', 1, 3, 1),
+(66, 'no registradas', 22, 7, 1);
 
 -- --------------------------------------------------------
 
@@ -96,7 +98,7 @@ INSERT INTO `hojas_recepcion` (`id_recepcion`, `piezas_necesarias`, `id_vehiculo
 CREATE TABLE IF NOT EXISTS `lista_reparaciones` (
   `id_lista` int(11) NOT NULL AUTO_INCREMENT,
   `titulo_lista` varchar(50) NOT NULL,
-  `descripcion-lista` varchar(500) NOT NULL,
+  `descripcion_lista` varchar(500) NOT NULL,
   `precio` int(5) NOT NULL,
   PRIMARY KEY (`id_lista`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
@@ -105,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `lista_reparaciones` (
 -- Volcado de datos para la tabla `lista_reparaciones`
 --
 
-INSERT INTO `lista_reparaciones` (`id_lista`, `titulo_lista`, `descripcion-lista`, `precio`) VALUES
+INSERT INTO `lista_reparaciones` (`id_lista`, `titulo_lista`, `descripcion_lista`, `precio`) VALUES
 (1, 'SERVICIOS EMBELLECIMIENTO AUTOMOTRIZ', '1.Laminado y pintura\n2.Lavado de tapicería\n3.Detailing\n', 35),
 (2, 'SERVICIOS MANTENIMIENTO PREVENTIVO AUTOMOTRIZ', '1.Revisión de frenos\n2.Cambio de líquidos de frenos\n3.Cambio de aceite\n4.Cambio de Kit de Distribución\n5.Sincronización y puesta punto a punto\n7.Inspección en la dirección', 55),
 (3, 'SERVICIOS MANTENIMIENTO CORRECTIVO AUTOMOTRIZ', '1.Suspensión\n2.Dirección\n3.Amortiguadores\n4.Kit de Embrague\n5.Electricidad y electrónica\n6.Corrección de fugas\n', 70),
@@ -165,19 +167,17 @@ CREATE TABLE IF NOT EXISTS `reparaciones_pendientes` (
   KEY `reparaciones_pendientes_ibfk_3` (`id_recepcion`),
   KEY `id_cliente` (`id_cliente`),
   KEY `id_vehiculo` (`id_vehiculo`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `reparaciones_pendientes`
 --
 
 INSERT INTO `reparaciones_pendientes` (`id_reparacion`, `id_recepcion`, `descripcion_reparacion`, `estado_reparacion`, `mecanico_encargado`, `id_cliente`, `id_vehiculo`) VALUES
-(1, 1, 'reparacion delantera', 'en reparacion', 1, 3, 1),
-(2, 1, 'reparacion trasera', 'en reparacion', 8, 3, 1),
-(3, 2, 'reparacion lateral', 'mecanico asignado, en proceso', 1, 13, 21),
-(4, 2, 'reparacion tridimencional', 'mecanico asignado, en proceso', 1, 13, 21),
-(15, 55, 'REPARACIÓN DE MOTOR', 'sin asignacion', 0, 7, 2),
-(16, 55, 'REPARACIÓN DE CAJA DE VELOCIDADES', 'sin asignacion', 0, 7, 2);
+(17, 56, 'REPARACIÓN DE TREN DELANTERO', 'mecanico asignado, en proceso', 1, 3, 1),
+(21, 66, 'REPARACIÓN DEL AIRE ACONDICIONADO', 'sin asignacion', 0, 7, 22),
+(22, 66, 'REPARACIÓN DE MOTOR', 'sin asignacion', 0, 7, 22),
+(23, 66, 'REPARACIÓN DEL SISTEMA DE ENCENDIDO CONVENCIONAL', 'mecanico asignado, en proceso', 1, 7, 22);
 
 -- --------------------------------------------------------
 
