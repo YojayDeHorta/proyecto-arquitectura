@@ -292,6 +292,7 @@ text-align: center;
 
 .Primera .div_2 {
     position: relative;
+    border: 0;
     margin-left: 140px;
     /*color: ;*/
     width: 49%;
@@ -300,6 +301,7 @@ text-align: center;
 
 .Primera .div_2 table {
     position: relative;
+    border: none;
     width: 140%;
     top: -17px;
     left: -35%;
@@ -423,7 +425,7 @@ text-align: center;
 
 
 .Sub_Total  td{
-    border: 1px solid dimgrey;
+
     width: 5%;
 }
 
@@ -434,3 +436,10 @@ text-align: center;
 
 /*-----------FACTURA-------------*/
 
+table{
+    border: 0;
+}
+
+table tr {
+    border: 0;
+}
