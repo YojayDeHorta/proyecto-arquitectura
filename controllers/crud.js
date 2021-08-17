@@ -98,6 +98,8 @@ exports.updateReparacion=(req,res)=>{
 // facturas
 exports.generarFactura=(req,res)=>{
     const datos=req.body;
+    var utc = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+    datos.fecha_generacion=utc
     conexion.query('INSERT INTO facturas SET ?',datos,(error,results)=>{
         if(error){
             if(error.errno==1062){

@@ -51,6 +51,7 @@ router.get('/cliente', (req, res) => {
         
         connection.query('SELECT * FROM facturas WHERE id_recepcion= ?;',[results[0][0].id_recepcion],(error,factura)=>{
             if(error){throw error;}
+            console.log(factura);
             res.render('cliente', {
                 titulo: 'mi perfil',
                 rol:req.session.rol,
@@ -60,7 +61,7 @@ router.get('/cliente', (req, res) => {
                 vehiculos:arrvehiculos,
                 arrdescripcion:arrdescripcion,
                 arrprecio:arrprecio,
-                factura:factura
+                factura:factura[0]
             })
         })
         

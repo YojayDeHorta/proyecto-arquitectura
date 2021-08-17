@@ -189,25 +189,25 @@
             <div class="div_2">FACTURA</div>
         </section> <br> <br>
         <section class="Tercera">
-            <div class="div_1"><p>Nombre Completo</p>
-                <p>Codigo del Vehiculo</p>
+            <div class="div_1"><p><%= factura.nombre_cliente %></p>
+                <p><%= factura.nombre_vehiculo %></p>
                 <p>Metodo de pago</p>
             </div>
             <div class="div_2">
                 <table>
                     <tr>
                         <td>N° Factura</td>
-                        <td>000000</td>
+                        <td><%= factura.id_factura %> </td>
                     </tr>
                     <tr>
                         <td>Fecha de factura</td>
-                        <td>dd/mm/aaaaa</td>
+                        <td><%= factura.fecha_generacion %> </td>
                     </tr>
                 </table>
                 <table class="Total">
                     <tr>
                         <td>TOTAL</td>
-                        <td>20154 USD</td>
+                        <td><%= factura.costo_total %></td>
                     </tr>
                 </table>
             </div>
