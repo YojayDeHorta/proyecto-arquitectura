@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-08-2021 a las 04:11:57
+-- Tiempo de generación: 17-08-2021 a las 08:08:35
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.0
 
@@ -22,19 +22,6 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `taller` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `taller`;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `admin`
---
-
-CREATE TABLE IF NOT EXISTS `admin` (
-  `id_admin` int(11) NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(45) NOT NULL,
-  `Correo` varchar(45) NOT NULL,
-  PRIMARY KEY (`id_admin`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -63,6 +50,33 @@ INSERT INTO `clientes` (`id_cliente`, `nombre`, `email`, `cedula`, `telefono`, `
 (3, 'yojay esteban', 'yojay1000@gmail.com', 25054547, 2147483647, '$2a$08$OgEkEAT9clM7WzCSWUyjFe83yji4nHTcra2piOw1yS3ZHfiwZzUQ.'),
 (7, 'victor davila', 'victor@gmail.com', 125475123, 12341234, '$2a$08$XrpqLLHfltkYkBLJvAOF0uLorSduD9EygZffCPwjZG/SPIzlO1BEy'),
 (13, 'marcos perez', 'marcos@gmail.com', 12142342, 12342142, '$2a$08$cMUSK6qUzX1UDxWPpWFEEeaHMNBzE8P/t0Oc62Ym0VQfBpVGA9bQy');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `facturas`
+--
+
+CREATE TABLE IF NOT EXISTS `facturas` (
+  `id_factura` int(11) NOT NULL AUTO_INCREMENT,
+  `id_recepcion` int(11) NOT NULL,
+  `nombre_cliente` varchar(50) NOT NULL,
+  `nombre_vehiculo` varchar(50) NOT NULL,
+  `reparaciones_realizadas` varchar(500) NOT NULL,
+  `costo_total` int(11) NOT NULL,
+  `pago_completado` varchar(2) NOT NULL,
+  `fecha_generacion` varchar(20) NOT NULL,
+  PRIMARY KEY (`id_factura`),
+  UNIQUE KEY `recepcion_unique` (`id_recepcion`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `facturas`
+--
+
+INSERT INTO `facturas` (`id_factura`, `id_recepcion`, `nombre_cliente`, `nombre_vehiculo`, `reparaciones_realizadas`, `costo_total`, `pago_completado`, `fecha_generacion`) VALUES
+(11, 66, 'victor davila', 'nissan citra', 'REPARACIÓN DEL AIRE ACONDICIONADO, REPARACIÓN DE MOTOR, REPARACIÓN DEL SISTEMA DE ENCENDIDO CONVENCIONAL', 203, 'no', '2021/08/17'),
+(12, 56, 'yojay esteban', 'Ford C-Max', 'REPARACIÓN DE TREN DELANTERO', 90, 'no', '2021/08/17');
 
 -- --------------------------------------------------------
 
