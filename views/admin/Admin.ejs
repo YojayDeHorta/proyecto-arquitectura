@@ -26,6 +26,7 @@
                                 <th scope="col">VEHICULO A REPARAR:</th>
                                 <th scope="col">REPARACIONES:</th>
                                 <th scope="col">MECANICOS ENCARGADOS:</th>
+                                <th scope="col">ESTADO DE REPARACION:</th>
                                 <th scope="col">VIDEO INGRESO</th>
                                 <th scope="col">ACCIONES</th>
                             </tr>
@@ -51,15 +52,48 @@
                                         <% if (reparacion.mecanico_encargado!=0) { %>
                                             <%= arrmecanicos[reparacion.mecanico_encargado] %> 
                                         <% } else{%>
-                                            sin asignacion
+                                            no asignado
                                         <% }%>
                                         <br>
                                     <% j++}) %>
+                                    
                                 </th>
-                                <td>video</td>
-                                <td class="text-center"><a class="btnEditar btn btn-primary" id="editar_usuario">Editar</a>
+                                <td>
+                                    <% var j=1; reparaciones_pendientes[i].forEach(reparacion => { %>
+                                    <%= j %> 
+                                    <%= reparacion.estado_reparacion %>
+                                    <br> 
+                                    
+                                    <%j++  }) %>
+                                </td>
+                                <td>
+                                    <% if (recepcion.video) { %>
+                                        <div class="modal fade" id="Video_<%= recepcion.id_recepcion%>" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalToggleLabel">Video Filmado en el taller</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <video id="myVideo" width="420" height="276" controls>
+                                                            <source src="videos/<%= recepcion.id_recepcion%>.mp4" type="video/mp4">
+                                                        </video>
+                                                        
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-primary bg-success" data-bs-toggle="modal" href="#Video_<%= recepcion.id_recepcion%>" role="button"><i class="fas fa-video"></i></a>
+                                        
+                                    <% } else { %>
+                                        <button id="video" onclick="abrirformvideo('<%= recepcion.id_recepcion%>'  )" class="btn btn-dark">subir video</button> 
+                                    <% }%>
+                                </td>
+                                <td class="text-center">
                                     <a onclick="confirmar('<%= recepcion.id_recepcion %>','<%= arrclientes[recepcion.id_cliente] %>')" class="btnBorrar btn btn-danger" id="borrar_usuario">Eliminar</a>
-                                    <a class="btnBorrar btn btn-success" id="borrar_usuario">Enviar Informe</a>
+                                    <a class="btnBorrar btn btn-success" id="borrar_usuario">Generar factura</a>
                                 </td>
                                 <% i++ %> 
                             </tr>
@@ -96,10 +130,7 @@
                         <option selected disabled>porfavor elija un usuario primero</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="archivo">video de ingreso</label>
-                    <input type="file" class="form-control-file" id="archivo" name="archivo" accept="video/mp4,video/x-m4v,video/*">
-                  </div>
+                
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary close" >Cerrar</button>
@@ -137,6 +168,32 @@
           </div>
         </div>
     </div>
+    <!-- Button trigger modal -->
+      <!-- Modal -->
+    <div class="modal fade" id="videomodal" tabindex="-1" role="dialog" aria-labelledby="videomodalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <form id="videoForm">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">elegir video</h5>
+                </div>
+                
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="archivo">video de ingreso</label>
+                            <input type="file" class="form-control-file" id="archivo" name="archivo" accept="video/mp4,video/x-m4v,video/*">
+                        </div>
+                    </div>
+                
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="cerrarvideo()">Close</button>
+                <button type="submit" class="btn btn-primary">Guardar video</button>
+                </div>
+            </form>
+          </div>
+        </div>
+    </div>
+
     <script src="js/Principal.js"></script>
     
     <script> 
@@ -145,3 +202,6 @@
     
     <%- include("../template/footer") %>    
     <script src="js/Admin_tabla.js"></script>
+    <script src="js/archivos.js"></script>
+    <script></script>
+    

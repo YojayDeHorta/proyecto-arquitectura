@@ -29,13 +29,23 @@
 
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab">
+                    <div class="form-group">
+                        <label for="descripcion_reparacion" id="elegir_reparacion" class="col-form-label">elija el vehiculo a reparar:</label>
+                        <select class="form-select" aria-label="Default select example" id="descripcion_reparacion" name="descripcion_reparacion" >
+                                <option value="">nissan centra</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion_reparacion" id="elegir_reparacion" class="col-form-label">elija las reparaciones que se le haran a su vehiculo:</label>
+                        <button type="button" class="btn btn-success">elegir reparacion</button>
+                    </div>
                     
                     <div class="input container-fluid-1">
-                        <label for="">elija los mantenimientos que les  hara a su vehiculo</label>
+                        <label for="">Reparaciones disponibles:</label>
                         <div class="Extra">
                             <div>
                                 <br>
-                                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                                <input class="form-check-input mt-0" type="checkbox" value="1" aria-label="Checkbox for following text input">
                                 <h5>SERVICIOS EMBELLECIMIENTO AUTOMOTRIZ</h5> <br>
                                 <i class="fas fa-magic"></i> <br>
                                 <p>
@@ -45,7 +55,7 @@
                                 </p>
                             </div>
                             <div><br>
-                                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                                <input class="form-check-input mt-0" type="checkbox" value="2" aria-label="Checkbox for following text input">
                                 <h5>SERVICIOS MANTENIMIENTO PREVENTIVO AUTOMOTRIZ</h5><br>
                                 <i class="far fa-file-powerpoint"></i>
                                 <p>
@@ -58,7 +68,7 @@
                                 </p>
                             </div>
                             <div><br>
-                                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                                <input class="form-check-input mt-0" type="checkbox" value="3" aria-label="Checkbox for following text input">
                                 <h5>SERVICIOS MANTENIMIENTO CORRECTIVO AUTOMOTRIZ</h5><br>
                                 <i class="fas fa-balance-scale-right"></i>
                                 <p>
@@ -71,27 +81,27 @@
                                 </p>
                             </div>
                             <div><br>
-                                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                                <input class="form-check-input mt-0" type="checkbox" value="4" aria-label="Checkbox for following text input">
                                 <h5>REPARACIÓN DE MOTOR</h5><br><br><br>
                               <i class="fas fa-cogs"></i>
                             </div>
                             <div><br>
-                                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                                <input class="form-check-input mt-0" type="checkbox" value="5" aria-label="Checkbox for following text input">
                                 <h5>REPARACIÓN DE CAJA DE VELOCIDADES</h5>
                                 <i class="fas fa-bolt"></i>
                             </div>
                             <div><br>
-                                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                                <input class="form-check-input mt-0" type="checkbox" value="6" aria-label="Checkbox for following text input">
                                 <h5>REPARACIÓN DEL AIRE ACONDICIONADO</h5>
                                 <i class="fab fa-airbnb"></i>
                             </div>
                             <div><br>
-                                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                                <input class="form-check-input mt-0" type="checkbox" value="7" aria-label="Checkbox for following text input">
                                 <h5>REPARACIÓN DEL TUBO DE ESCAPE</h5>
                                <i class="fas fa-vial"></i>
                             </div>
                             <div><br>
-                                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                                <input class="form-check-input mt-0" type="checkbox" value="8" aria-label="Checkbox for following text input">
                                 <h5>REPARACIÓN ELECTRÓNICA AUTOMOTRIZ</h5>
                                <i class="fas fa-charging-station"></i>
                             </div>
@@ -128,13 +138,7 @@
                         </div>
                         
                     </div>
-                    <div class="form-group">
-                        <label for="descripcion_reparacion" id="elegir_reparacion" class="col-form-label">elija el vehiculo a reparar:</label>
-                        <select class="form-select" aria-label="Default select example" id="descripcion_reparacion" name="descripcion_reparacion" >
-                                <option value="">nissan centra</option>
-                        </select>
-                    </div>
-                    <button type="button" class="btn btn-success">Enviar solicitud</button>
+                    
                     <!--hasta aqui negro-->
                 </div>
                 <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
@@ -266,7 +270,26 @@
                                 <td><%= arrdescripcion[reparacion.descripcion_reparacion] %> </td>
                                 <td><%= reparacion.estado_reparacion %></td>
                                 <td><%= arrprecio[reparacion.descripcion_reparacion] %>$ </td>
-                                <td><i class="far fa-calendar-alt"></i></td>
+                                <td>
+                                    <div class="modal fade" id="Video_<%= reparacion.id_recepcion%>" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalToggleLabel">Video Filmado en el taller</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <video id="myVideo" width="420" height="276" controls>
+                                                        <source src="videos/<%= reparacion.id_recepcion%>.mp4" type="video/mp4">
+                                                    </video>
+                                                    
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-primary bg-success" data-bs-toggle="modal" href="#Video_<%= reparacion.id_recepcion%>" role="button"><i class="fas fa-video"></i></a>
+                                </td>
                                 <td class="text-center"><a class="btnEditar btn btn-primary" id="editar_usuario">SI</a><a class="btnBorrar btn btn-danger" id="borrar_usuario">NO</a></td>
                             </tr>
                             <% }) %>

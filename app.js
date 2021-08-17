@@ -25,7 +25,7 @@ app.use(express.static(__dirname + "/public"));
 
 
 //inicio del servidor
-app.listen(3003,()=>{
+app.listen(3000,()=>{
     console.log('conectado  al servidor 3000')
 })
 

@@ -48,6 +48,7 @@ router.get('/cliente', (req, res) => {
         var arrvehiculos = {};results[1].map((obj)=>{arrvehiculos[obj.id_vehiculo] = obj.placa+" "+obj.marca+" "+obj.modelo;});   
         var arrdescripcion = {};results[2].map((obj)=>{arrdescripcion[obj.titulo_lista] = obj.descripcion_lista;});   
         var arrprecio = {};results[2].map((obj)=>{arrprecio[obj.titulo_lista] = obj.precio;});   
+        
         res.render('cliente', {
             titulo: 'mi perfil',
             rol:req.session.rol,

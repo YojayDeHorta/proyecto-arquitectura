@@ -8,11 +8,11 @@ var path = require('path')
 //archivos
 const storage=multer.diskStorage({
     destination: (req,file,cb)=>{
-        cb(null,'./archivos')
+        cb(null,'./public/videos')
     },
     filename: (req,file,cb)=>{
         console.log(path.extname(file.originalname));
-        cb(null,'3'+path.extname(file.originalname))
+        cb(null,req.session.recepcionvideo+path.extname(file.originalname))
     }
     
 })
@@ -75,14 +75,21 @@ router.get('/admin', (req, res) => {
 })
 
 
-router.post('/video',(req,res)=>{
+router.post('/subir/:id_recepcion',(req,res)=>{
+    req.session.recepcionvideo=req.params.id_recepcion;
+
     upload(req, res, function (err) {
-        
         if (err) {
             console.log(err);
-            res.json('0');
+            res.json('2');
         } else{
-            console.log("todo bien");
+            connection.query('UPDATE hojas_recepcion SET video=? WHERE id_recepcion = ?',[1,req.session.recepcionvideo],(error,results)=>{
+                if(error){
+                    console.log(error);
+                }else{
+                    res.json('1');
+                }
+            })
         }
 
     })

@@ -1,21 +1,31 @@
 /*-------------VALIDACIONES------------- */
-const formulario = document.getElementById('archivoForm');
-
-
+const formulariovideo = document.getElementById('videoForm');
+const videolabel=document.getElementById('archivo')
+const modalvideo= new bootstrap.Modal(
+  document.getElementById("videomodal")
+);
+let id_recepcion;
+function abrirformvideo(id){
+  videolabel.value=''
+  id_recepcion=id;
+  modalvideo.show();
+}
+function cerrarvideo(){
+  modalvideo.hide();
+}
 /**----------------REGISTRO-------------------- */
-formulario.addEventListener('submit', (e) => {
+videoForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  var datos_registro = new FormData(formulario);
-  fetch("/subir", { method: "POST",body: datos_registro,}).then((res) => res.json())
+  var datos_registro = new FormData(formulariovideo);
+  fetch("/subir/"+id_recepcion, { method: "POST",body: datos_registro,}).then((res) => res.json())
     .then((data) => {
       switch (data) {
         case "1":
           Swal.fire({
             icon: 'success',
-            title: 'Consentimiento subido exitosamente',
-            text: 'ahora espera a que este sea aceptado',
+            title: 'Video subido exitosamente',
           }).then(function() {
-            window.location = "/usuario";
+            window.location = "/admin";
           })
          
           break;
@@ -23,17 +33,10 @@ formulario.addEventListener('submit', (e) => {
           Swal.fire({
             icon: 'error',
             title: 'algo salio mal...',
-            text: 'el archivo que intentas subir no es un pdf ni un jpg!',
+            text: 'el archivo que intentas subir no es un mp4!',
             footer: 'intentalo de nuevo'
           })
           break;
-        case "3":
-          Swal.fire({
-            icon: 'error',
-            title: 'algo salio mal...',
-            text: 'ya has subido tu consentimiento, espera a que sea aceptado por favor'
-          })
-        break;
         default:
           break;
       }
