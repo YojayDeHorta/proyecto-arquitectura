@@ -187,3 +187,21 @@ table tbody tr td a{
 table tbody tr td i{
 	font-size: 25px;
 }
+
+#btncrear{
+	margin-bottom: 25px;
+}
+
+/**/
+
+
+.Btn_Personal button{
+	width: 30%;
+	margin-left: 20px;
+}
+
+.Btn_Personal a{
+	position: relative;
+	width: 30%;
+	top: -5px;
+}

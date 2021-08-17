@@ -105,6 +105,7 @@
 
 
 .Registro_Ico {
+    position: relative;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -113,8 +114,6 @@
     width: 100%;
     margin-top: 28px;
     left: -42%;
-
-
 
 }
 
@@ -127,10 +126,11 @@
     border: 1px solid white;
     width: 22%;
     height: 130px;
-    top: 350px;
+    top: 290px;
     background-color: rgb(0, 0, 0, 0.5);
     margin-left: 35px;
     left: 13%;
+    font-size: 25px;
 
 }
 
@@ -140,14 +140,14 @@
 }
 
 .Registro_Ico a i {
-    font-size: 22px;
+    font-size: 35px;
     margin-bottom: 45px;
     margin-top: 12px;
 
 }
 
 .Registro_Ico a p {
-    font-size: 12px;
+    font-size: 13px;
     margin: 0;
     width: 100%;
 

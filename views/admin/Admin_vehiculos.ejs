@@ -8,10 +8,10 @@
     <%- include("../template/navbar") %>
     <div class="Principal container-fluid">
     <div class="container mb-5">
-        <button type="button" id="btncrear" class="btn btn-outline-primary mt-4"><i class="fas fa-car"></i> añadir vehiculo</button>
-        <table class="table table-bordered table-striped text-center mt-4" id="tabla_vehiculos">
-            <thead >
-                <tr class="cabeza-tabla" class="bg-primary text-white">
+        <button type="button" id="btncrear" class="btn btn-outline-primary mt-4"><i class="fas fa-car"></i> Añadir Vehiculo</button>
+        <table class="table table-bordered  text-center mt-4" id="tabla_vehiculos">
+            <thead style="color:white">
+                <tr class="cabeza-tabla" class="text-white" style="background-color:#3733FF;">
                     <th scope="col">ID DE INGRESO</th>
                     <th scope="col">NOMBRE DEL PROPIETARIO</th>
                     <th scope="col">PLACA</th>
@@ -30,7 +30,7 @@
                     <td><%= vehiculo.marca %></td>
                     <td><%= vehiculo.modelo %></td>
                     <td><%= vehiculo.color %></td>
-                    <td>
+                    <td class="Btn_Personal">
                         <button id="editar_vehiculo" class="btn btn-outline-info"><i class="fas fa-edit"></i>editar</button>
                         
                         <a  onclick="confirmar('<%= vehiculo.id_vehiculo %>','<%= clientesnombre[vehiculo.id_cliente] %>')" class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></i>borrar</a>

@@ -8,7 +8,7 @@
     <%- include("../template/navbar") %>
     <div class="Principal container-fluid">
     <div class="container mb-5">
-        <button type="button" id="btncrear" class="btn btn-outline-primary mt-4"><i class="fas fa-cogs"></i>añadir mecanico</button>
+        <button type="button" id="btncrear" class="btn btn-outline-primary mt-4"><i class="fas fa-cogs"></i>&nbsp; Añadir Mecanico</button>
         <table class="table table-bordered table-striped text-center mt-4" id="tabla_mecanicos">
             <thead>
                 <tr class="bg-primary text-white">
@@ -28,7 +28,7 @@
                     <th><%= mecanico.nombre %></th>
                     <td><%= mecanico.email %></td>
                     <td><%= mecanico.disponibilidad %></td>
-                    <td>
+                    <td class="Btn_Personal">
                         <button id="editar_mecanico" class="btn btn-outline-info"><i class="fas fa-edit"></i>editar</button>
                         
                         <a  onclick="confirmar('<%= mecanico.id_mecanico %>','<%= mecanico.nombre %>')" class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></i>borrar</a>
