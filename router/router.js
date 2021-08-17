@@ -14,22 +14,26 @@ router.get('/cerrarsesion', (req, res) => {
     
     
 })
-router.post('/registro',async(req,res)=>{
+router.post('/registrousuario',async(req,res)=>{
     //console.log(req); 
     const datos=req.body;
     console.log(datos); 
     datos.password= await bcryptjs.hash(req.body.password,8);
+    
     connection.query('INSERT INTO clientes SET ?',datos,async(error,results)=>{
         if(error){
             if(error.errno==1062){
                 res.json('2');
+                console.log(error);  
             }else{
                console.log(error);  
             }
             
             //res.json('1');
         }else{
-            console.log('registrado');
+            console.log('results');
+            console.log(results);
+            console.log(datos); 
             //res.redirect('/login');
             res.json('1');
         }

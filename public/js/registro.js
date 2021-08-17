@@ -28,14 +28,14 @@ formulario.addEventListener('submit', (e) => {
   e.preventDefault();
   var object = {};
   var datos_registro = new FormData(formulario);
-  datos_registro.forEach((value, key) => object[key] = value);
-  fetch("/registro", {
+  var object=JSON.stringify(Object.fromEntries(datos_registro));
+  fetch("/registrousuario", {
     method: "POST",
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(object),
+    body:  object,
   })
     .then((res) => res.json())
     .then((data) => {
@@ -60,13 +60,7 @@ formulario.addEventListener('submit', (e) => {
           })
           break;
         case "3":
-          Swal.fire({
-            icon: 'error',
-            title: 'algo salio mal...',
-            text: 'alguien con tu cedula/tarjeta de identidad ya se ha registrado, intenta recuperar tu contraseña',
-            footer: '<a href="recovery.php">Quieres recuperar tu contraseña?</a>'
-          })
-          break;
+          
         default:
           break;
       }
