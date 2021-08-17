@@ -231,8 +231,58 @@
                         <% } %>
                     </div>
                     <div class="P_Factura">
-                        <button type="button" class="btn btn-success">Pagar Factura</button>
-                        <button type="button" class="btn btn-secondary">Verificar Factura</button>
+                        <!-- Vertically centered modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Pagar Factura</button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title" id="exampleModalLabel" style="position: relative; left:40px;">MÉTODOS DE PAGO</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form class="Pago">
+                                            <div class="mb-3">
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="text" placeholder="Numero De Tarjeta">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="text" placeholder="Nombre Completo">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="text" placeholder="Fecha de Experiencia">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="text" placeholder="VÁLIDA HASTA ">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="text" placeholder="CVV">
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </form>
+                                        <div>
+                                           <img src="img/Visa.png" alt="" width="200px" height="200px">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-primary">Pagar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-3-tab">
